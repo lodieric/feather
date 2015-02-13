@@ -98,8 +98,8 @@
                             angular.element(".imagePropertiesModal").scope()
                                 .$openModalDialog({ sfModel: function () { return properties; } })
                                 .then(function (properties) {
-                                    if (properties && selectedImageId.Item) {
-                                        return mediaService.images.getById(selectedImageId.Item.Id);
+                                    if (properties && properties.Item) {
+                                        return mediaService.images.getById(properties.Item.Id);
                                     }
                                 })
                                 .then(function (data) {
